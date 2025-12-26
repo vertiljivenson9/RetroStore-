@@ -1,0 +1,31 @@
+{
+  "name": "RetroStore Official Repo",
+  "version": "1.0",
+  "updated": "2025-12-26",
+  "apps": [
+    {
+      "id": "app_clicker",
+      "name": "Retro Clicker",
+      "version": "1.0.0",
+      "author": "Vertil Community",
+      "category": "Juegos",
+      "description": "Un juego de clics para demostrar la persistencia de datos en el V-Drive.",
+      "icon": "👆",
+      "size": "15KB",
+      "packageUrl": "https://raw.githubusercontent.com/vertiljivenson9/RetroStore-/main/packages/clicker.vpx",
+      "permissions": ["create_window", "read_storage", "write_storage"]
+    },
+    {
+      "id": "app_matrix",
+      "name": "Matrix Rain",
+      "version": "1.0.1",
+      "author": "RetroOS Team",
+      "category": "Visual",
+      "description": "Efecto de lluvia de código estilo Matrix.",
+      "icon": "🕶️",
+      "size": "10KB",
+      "packageUrl": "https://raw.githubusercontent.com/vertiljivenson9/RetroStore-/main/packages/matrix.vpx",
+      "permissions": ["create_window"]
+    }
+  ]
+}
