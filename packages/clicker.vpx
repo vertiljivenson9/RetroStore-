@@ -1,0 +1,10 @@
+{
+  "id": "app_clicker",
+  "name": "Retro Clicker Pro",
+  "version": "1.0.0",
+  "author": "Vertil Jivenson",
+  "icon": "👆",
+  "category": "Games",
+  "permissions": ["create_window", "read_storage", "write_storage", "notifications"],
+  "script": "/** * Retro Clicker para Mio OS * Utiliza la API oficial de Vertil **/  // 1. Crear la interfaz de la ventana const win = api.window.create({     title: 'Retro Clicker v1.0',     width: 320,     height: 400,     icon: '👆' });  const container = win.content;  // 2. Cargar datos del V-Drive let clicks = api.storage.get('total_clicks', 0);  // 3. Renderizar el Mundo de la App container.innerHTML = `     <div style='background:#C0C0C0; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:\"Courier New\", Courier, monospace;'>         <h1 style='color:#000080; text-shadow: 1px 1px #fff;'>RETRO CLICKER</h1>         <div id='display' style='background:#000; color:#0F0; padding:20px; font-size:48px; border:4px inset #808080; margin:20px 0; width:80%; text-align:center;'>             ${clicks}         </div>         <button id='btnClick' style='padding:20px; cursor:pointer; background:#C0C0C0; border:4px outset #fff; font-weight:bold; font-size:18px; active:border-style:inset;'>             ¡HACER CLIC!         </button>         <p style='margin-top:20px; font-size:12px;'>Los datos se guardan en el V-Drive</p>     </div> `;  // 4. Lógica de Negocio const btn = container.querySelector('#btnClick'); const display = container.querySelector('#display');  btn.onclick = () => {     clicks++;     display.innerText = clicks;          // Guardar permanentemente en el sistema     api.storage.set('total_clicks', clicks);          // Notificación del sistema cada 50 clics     if (clicks % 50 === 0) {         api.system.notify('¡Hito alcanzado!', 'Has llegado a ' + clicks + ' clics.', 'info');     } };"
+}
